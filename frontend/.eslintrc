@@ -6,6 +6,8 @@
     "max-len": ["warn", 200],
     "no-underscore-dangle": [1],
     "no-console": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "jsx-a11y/label-has-associated-control": "off",
     "react/jsx-props-no-spreading": "off"
   },
   "env": {

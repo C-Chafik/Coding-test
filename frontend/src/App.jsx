@@ -1,13 +1,8 @@
 import React from 'react';
-import './App.css';
-import ProfilePage from './pages/profile';
+import RouteBrowser from './components/RouteBrowser/routebrowser';
 
 function App() {
-  return (
-    <div className="root">
-      <ProfilePage />
-    </div>
-  );
+  return (<RouteBrowser />);
 }
 
 export default App;

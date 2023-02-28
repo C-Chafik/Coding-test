@@ -13,11 +13,12 @@ const hashPassword = (email, password) => shajs('sha256').update(`${email}${pass
 const authenticateUser = async (email, password) => {
   const hash = hashPassword(email, password);
   const queryText = {
-    text: ` SELECT s.id, s.email, s.first_name as firstName, s.last_name as lastName
-              FROM users s
+    text: ` SELECT s.id, s.email, s.first_name as firstName, s.last_name as lastName, s.admin, s.country, s.city, s.phone_number
+              FROM public.users s
               WHERE email = $1 AND password = $2`,
     values: [email, hash],
   };
+
   try {
     const { rows } = await db.query(queryText);
     if (rows[0]) {
@@ -26,7 +27,7 @@ const authenticateUser = async (email, password) => {
     }
     throw (new Error('Bad credentials'));
   } catch (error) {
-    throw (new Error('Bad credentials'));
+    throw (error);
   }
 };
 

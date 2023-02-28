@@ -12,6 +12,7 @@ CREATE TABLE users (
   city TEXT,
   phone_number TEXT,
   position TEXT,
+  admin BOOLEAN,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
