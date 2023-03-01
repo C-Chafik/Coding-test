@@ -25,6 +25,7 @@ const authenticateUser = async (email, password) => {
       const user = rows[0];
       return user;
     }
+    return undefined;
     throw (new Error('Bad credentials'));
   } catch (error) {
     throw (error);

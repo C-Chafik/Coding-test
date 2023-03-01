@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "docker:up": "POSTGRES_USER=thminsight POSTGRES_PASSWORD=coding_test_password POSTGRES_DB=thm_database docker-compose up",
+    "docker:up": "docker-compose up",
     "docker:down": "docker-compose down",
     "docker:test": "docker-compose run backend sh -c cd /app &&  npm run test",
     "docker:test:watch": "docker-compose run backend sh -c cd /app &&  npm run test:watch",
